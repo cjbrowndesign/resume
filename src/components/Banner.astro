@@ -1,0 +1,45 @@
+---
+const { title } = Astro.props;
+const { copy } = Astro.props;
+---
+
+<div class="c-banner">
+    <div class="c-banner__container">
+        <h1 class="c-banner__title">
+            { title }
+        </h1>
+        <p class="c-banner__copy">
+            { copy }
+        </p>
+    </div>
+</div>
+
+<style>
+    .c-banner {
+        position: relative;
+
+        padding: 20px 0 40px;
+    }
+
+    .c-banner__container {
+        padding: 0 5%;
+
+        max-width: 690px;
+    }
+
+    .c-banner__title {
+        margin: 0 0 24px;
+
+        color: rgb(var(--light));
+        line-height: 56px;
+        font-size: 48px;
+    }
+
+    .c-banner__copy {
+        margin: 0;
+
+        color: rgba(var(--text));
+        line-height: 24px;
+        font-size: 16px;
+    }
+</style>
