@@ -3,6 +3,8 @@ interface Props {
 	title: string;
 }
 
+import '../styles/reset.css';
+
 const { title } = Astro.props;
 ---
 
@@ -10,7 +12,7 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Hi, I'm Cj Brown, a front end developer based in the UK. I build websites and web applications using HTML, CSS, JavaScript, React, Vue, Astro, Svelte, and more." />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
@@ -37,15 +39,7 @@ const { title } = Astro.props;
 		background: #13151a;
 		background-size: 224px;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+	body {
+		background-color: #23262d;
 	}
 </style>
