@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Banner from '../components/Banner.astro';
+import ImageGrid from '../components/ImageGrid.astro';
+import { Image } from 'astro:assets';
 ---
 
 <Layout title="Cj Brown - Front End Developer">
@@ -8,4 +10,46 @@ import Banner from '../components/Banner.astro';
 	title="Software designer, founder, and amateur astronaut."
 	copy="Hi, I'm Cj Brown, a front end developer based in the UK. I build websites and web applications using HTML, CSS, JavaScript, React, Vue, Astro, Svelte, and more. I have a keen interest in performance and accessibility, and I'm always looking to learn new things."
 	/>
+
+	<section class="c-section">
+		<div class="o-container">
+			<ImageGrid>
+				<Image
+				src="https://source.unsplash.com/random/300×300"
+				alt="Astro"
+				width="300"
+				height="300"
+				class={`c-image-grid__item`}
+				/>
+				<Image
+				src="https://source.unsplash.com/random/300×300"
+				alt="Astro"
+				width="300"
+				height="300"
+				class={`c-image-grid__item`}
+				/>
+				<Image
+				src="https://source.unsplash.com/random/300×300"
+				alt="Astro"
+				width="300"
+				height="300"
+				class={`c-image-grid__item`}
+				/>
+				<Image
+				src="https://source.unsplash.com/random/300×300"
+				alt="Astro"
+				width="300"
+				height="300"
+				class={`c-image-grid__item`}
+				/>
+				<Image
+				src="https://source.unsplash.com/random/300×300"
+				alt="Astro"
+				width="300"
+				height="300"
+				class={`c-image-grid__item`}
+				/>
+			</ImageGrid>
+		</div>
+	</section>
 </Layout>
