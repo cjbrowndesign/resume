@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Banner from '../components/Banner.astro';
 import ImageGrid from '../components/ImageGrid.astro';
 import { Picture } from 'astro:assets';
+import Card from '../components/Card.astro';
 ---
 
 <Layout title="Cj Brown - Front End Developer">
@@ -54,8 +55,10 @@ import { Picture } from 'astro:assets';
 	</section>
 
 	<section class="c-section">
-		<div class="o-container">
-
+		<div class="o-container o-stack">
+			<Card />
+			<Card />
+			<Card />
 		</div>
 	</section>
 </Layout>
