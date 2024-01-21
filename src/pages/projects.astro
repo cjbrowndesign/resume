@@ -1,7 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Banner from '../components/Banner.astro';
+import Card from '../components/Card.astro';
 ---
 
 <Layout title="Projects - Cj Brown">
+	<Banner
+	title="Previous Projects"
+	copy="Below is a list of some of the projects I have worked on in the past. They are a mix of personal and professional projects that I am particularly proud of."
+	/>
 
+    <section class="c-section">
+        <div class="o-container">
+            <div class="o-grid">
+                <div class="o-stack" x-data="{ modal: null }">
+                    <Card id=1 button="View Website" />
+					<Card id=2 button="View Website" />
+                    <Card id=3 button="View Website" />
+					<Card id=4 button="View Website" />
+                </div>
+            </div>
+        </div>
+    </section>
 </Layout>

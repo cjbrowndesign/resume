@@ -1,7 +1,7 @@
 ---
 import Modal from '../components/Modal.astro';
 
-const { id } = Astro.props;
+const { id, button = 'Learn More' } = Astro.props;
 ---
 
 <article class="c-card">
@@ -15,7 +15,7 @@ const { id } = Astro.props;
 		When you’re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself. I wanted them to see a design system that was as beautiful as it was functional. I wanted them to see a website that was as ambitious as the company itself.
 	</p>
 	<button @click=`modal = ${id}` class="c-card__link">
-		Learn more
+		{ button }
 	</button>
 </article>
 
