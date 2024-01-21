@@ -56,12 +56,11 @@ import Button from '../components/Button.astro';
 		</div>
 	</section>
 
-	<section class="c-section">
+	<section class="c-section" x-data="{ modal: null }">
 		<div class="o-container o-duo">
 			<div class="o-stack">
-				<Card />
-				<Card />
-				<Card />
+				<Card id=1 />
+				<Card id=2 />
 			</div>
 			<div class="o-stack o-stack--sm">
 				<Button href="#">

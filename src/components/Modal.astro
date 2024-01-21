@@ -1,0 +1,109 @@
+---
+const { id } = Astro.props;
+---
+
+<article class="c-modal" x-show=`modal == ${id}` x-transition.225ms>
+    <div class="c-modal__content">
+        <h4 class="c-modal__subtitle">
+            September 2018 - July 2022
+        </h4>
+        <h3 class="c-modal__title">
+            Web Developer - <span>Fenech Digital/Kappow</span> - <span>Stamford</span>
+        </h3>
+        <p class="c-modal__copy">
+            When you’re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself. I wanted them to feel like they were actually there, in the middle of the action. I wanted the website to be an experience.
+        </p>
+        <ul class="c-modal__list">
+            <li class="c-modal__item">
+                When you’re building a website for a company as ambitious as Planetaria, you need to make an impression.
+            </li>
+            <li class="c-modal__item">
+                When you’re building a website for a company as ambitious as Planetaria, you need to make an impression.
+            </li>
+            <li class="c-modal__item">
+                When you’re building a website for a company as ambitious as Planetaria, you need to make an impression.
+            </li>
+        </ul>
+    </div>
+</article>
+
+<style>
+    .c-modal {
+        display: flex;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        align-items: center;
+        justify-content: center;
+
+        z-index: 10;
+
+        background-color: rgba(0, 0, 0, 0.55);
+
+        width: 100%;
+        height: 100%;
+
+        color: rgb(var(--light));
+    }
+
+    .c-modal__content {
+        padding: 48px;
+
+        border-radius: 16px;
+		border: 1px solid rgba(var(--border), 0.2);
+		background-color: rgba(var(--body));
+
+        max-width: 720px;
+    }
+
+    .c-modal__subtitle {
+		display: inline-block;
+
+		margin: 0 0 16px;
+		padding-left: 10px;
+
+		border-left: 2px solid rgba(var(--border), 0.6);
+
+		color: rgba(var(--border), 0.5);
+		font-weight: 400;
+		line-height: 1;
+		font-size: 14px;
+	}
+
+	.c-modal__title {
+		margin: 0 0 12px;
+
+		font-weight: 600;
+		font-size: 16px;
+	}
+
+    .c-modal__title > span {
+        font-weight: 400;
+        color: rgba(var(--text));
+    }
+	
+	.c-modal__copy {
+		margin: 0 0 16px;
+
+		color: rgb(var(--text));
+		line-height: 24px;
+		font-size: 14px;
+	}
+
+    .c-modal__list {
+        margin: 0;
+        padding: 0;
+
+        list-style-position: inside;
+    }
+
+    .c-modal__item {
+        margin: 0 0 8px;
+
+        color: rgb(var(--text));
+        line-height: 24px;
+        font-size: 14px;
+    }
+</style>

@@ -1,5 +1,7 @@
 ---
+import Modal from '../components/Modal.astro';
 
+const { id } = Astro.props;
 ---
 
 <article class="c-card">
@@ -12,10 +14,12 @@
 	<p class="c-card__copy">
 		When you’re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself.
 	</p>
-	<a href="#" class="c-card__link">
+	<button @click=`modal = ${id}` class="c-card__link">
 		Learn more
-	</a>
+	</button>
 </article>
+
+<Modal id={ id } />
 
 <style>
 	.c-card {
@@ -82,7 +86,15 @@
 	}
 
 	.c-card__link {
+		margin: 0;
+		padding: 0;
+
+		border: 0;
+		background: none;
+
 		text-decoration: none;
 		color: rgba(var(--accent));
+
+		cursor: pointer;
 	}
 </style>
