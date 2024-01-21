@@ -7,6 +7,12 @@ import Card from '../components/Card.astro';
 import Aside from '../components/Aside.astro';
 import Title from '../components/Title.astro';
 import Button from '../components/Button.astro';
+
+import imgOne from '../images/img_one.jpg';
+import imgTwo from '../images/img_two.jpg';
+import imgThree from '../images/img_three.jpg';
+import imgFour from '../images/img_four.jpg';
+import imgFive from '../images/img_five.jpg';
 ---
 
 <Layout title="Cj Brown - Front End Developer">
@@ -19,35 +25,40 @@ import Button from '../components/Button.astro';
 		<div class="o-container">
 			<ImageGrid>
 				<Picture
-				src="https://source.unsplash.com/random/300×300"
+				src={imgOne}
+				formats={['webp', 'jpg']}
 				alt="Astro"
 				width="300"
 				height="300"
 				class={`c-image-grid__item`}
 				/>
 				<Picture
-				src="https://source.unsplash.com/random/300×300"
+				src={imgTwo}
+				formats={['webp', 'jpg']}
 				alt="Astro"
 				width="300"
 				height="300"
 				class={`c-image-grid__item`}
 				/>
 				<Picture
-				src="https://source.unsplash.com/random/300×300"
+				src={imgThree}
+				formats={['webp', 'jpg']}
 				alt="Astro"
 				width="300"
 				height="300"
 				class={`c-image-grid__item`}
 				/>
 				<Picture
-				src="https://source.unsplash.com/random/300×300"
+				src={imgFour}
+				formats={['webp', 'jpg']}
 				alt="Astro"
 				width="300"
 				height="300"
 				class={`c-image-grid__item`}
 				/>
 				<Picture
-				src="https://source.unsplash.com/random/300×300"
+				src={imgFive}
+				formats={['webp', 'jpg']}
 				alt="Astro"
 				width="300"
 				height="300"
