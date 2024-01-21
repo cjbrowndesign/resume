@@ -95,4 +95,20 @@ const { title } = Astro.props;
 
         object-fit: cover;
     }
+	.is-quarantine ul {
+		margin: 0;
+        padding: 0;
+
+        list-style-position: inside;
+	}
+	.is-quarantine li {
+		margin: 0 0 10px;
+
+		color: rgb(var(--text));
+		line-height: 24px;
+		font-size: 14px;
+	}
+	.is-quarantine li > p {
+		display: inline;
+	}
 </style>

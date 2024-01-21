@@ -1,25 +1,29 @@
 ---
-import Modal from '../components/Modal.astro';
-
-const { id, button = 'Learn More' } = Astro.props;
+const {
+	id,
+	startDate,
+	endDate,
+	role,
+	employer,
+	shortDescription,
+	button = 'Learn More'
+} = Astro.props;
 ---
 
 <article class="c-card">
 	<h4 class="c-card__subtitle">
-		July 2021 - Present
+		{ startDate } - { endDate }
 	</h4>
 	<h3 class="c-card__title">
-		Crafting a design system for a multiplanetary future
+		{ role } - { employer }
 	</h3>
 	<p class="c-card__copy">
-		When you’re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself. I wanted them to see a design system that was as beautiful as it was functional. I wanted them to see a website that was as ambitious as the company itself.
+		{ shortDescription }
 	</p>
 	<button @click=`modal = ${id}` class="c-card__link">
 		{ button }
 	</button>
 </article>
-
-<Modal id={ id } />
 
 <style>
 	.c-card {

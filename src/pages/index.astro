@@ -7,6 +7,7 @@ import Card from '../components/Card.astro';
 import Aside from '../components/Aside.astro';
 import Title from '../components/Title.astro';
 import Button from '../components/Button.astro';
+import Modal from '../components/Modal.astro';
 
 import imgOne from '../images/img_one.jpg';
 import imgTwo from '../images/img_two.jpg';
@@ -15,6 +16,8 @@ import imgFour from '../images/img_four.jpg';
 import imgFive from '../images/img_five.jpg';
 
 import buttonIcon from '../images/icons/download.svg';
+
+const allJobs = await Astro.glob('../content/jobs/*.md');
 ---
 
 <Layout title="Cj Brown - Front End Developer">
@@ -79,9 +82,30 @@ import buttonIcon from '../images/icons/download.svg';
 		<div class="o-container o-duo">
 			<div>
 				<Title text="Job History" />
-				<div class="o-stack">
-					<Card id=1 />
-					<Card id=2 />
+				<div class="o-stack" x-data="{ modal: null }">
+					{
+						allJobs.map((job) => (
+							<Card
+							title={job.frontmatter.title}
+							employer={job.frontmatter.employer}
+							startDate={job.frontmatter.startDate}
+							endDate={job.frontmatter.endDate}
+							role={job.frontmatter.role}
+							shortDescription={job.frontmatter.shortDescription}
+							id={job.frontmatter.id}
+							/>
+							<Modal
+							title={job.frontmatter.title}
+							employer={job.frontmatter.employer}
+							startDate={job.frontmatter.startDate}
+							endDate={job.frontmatter.endDate}
+							role={job.frontmatter.role}
+							location={job.frontmatter.location}
+							id={job.frontmatter.id}>
+								<Fragment set:html={job.compiledContent()} />
+							</Modal>
+						))
+					}
 				</div>
 			</div>
 			<div class="o-stack o-stack--sm">

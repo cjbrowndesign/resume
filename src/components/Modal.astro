@@ -1,29 +1,25 @@
 ---
-const { id } = Astro.props;
+const {
+	id,
+	startDate,
+	endDate,
+	role,
+	employer,
+    location,
+} = Astro.props;
 ---
 
 <article class="c-modal" x-show=`modal == ${id}` x-transition.225ms>
     <div class="c-modal__content">
         <h4 class="c-modal__subtitle">
-            September 2018 - July 2022
+            { startDate } - { endDate }
         </h4>
         <h3 class="c-modal__title">
-            Web Developer - <span>Fenech Digital/Kappow</span> - <span>Stamford</span>
+            { role } - <span>{ employer }</span> - <span>{ location }</span>
         </h3>
-        <p class="c-modal__copy">
-            When you’re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself. I wanted them to feel like they were actually there, in the middle of the action. I wanted the website to be an experience.
-        </p>
-        <ul class="c-modal__list">
-            <li class="c-modal__item">
-                When you’re building a website for a company as ambitious as Planetaria, you need to make an impression.
-            </li>
-            <li class="c-modal__item">
-                When you’re building a website for a company as ambitious as Planetaria, you need to make an impression.
-            </li>
-            <li class="c-modal__item">
-                When you’re building a website for a company as ambitious as Planetaria, you need to make an impression.
-            </li>
-        </ul>
+        <div class="c-modal__copy is-quarantine">
+            <slot />
+        </div>
     </div>
 </article>
 
@@ -56,6 +52,9 @@ const { id } = Astro.props;
 		background-color: rgba(var(--body));
 
         max-width: 720px;
+        max-height: 65vh;
+
+        overflow: scroll;
     }
 
     .c-modal__subtitle {
@@ -91,19 +90,4 @@ const { id } = Astro.props;
 		line-height: 24px;
 		font-size: 14px;
 	}
-
-    .c-modal__list {
-        margin: 0;
-        padding: 0;
-
-        list-style-position: inside;
-    }
-
-    .c-modal__item {
-        margin: 0 0 8px;
-
-        color: rgb(var(--text));
-        line-height: 24px;
-        font-size: 14px;
-    }
 </style>
