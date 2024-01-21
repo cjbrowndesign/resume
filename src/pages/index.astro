@@ -5,6 +5,7 @@ import ImageGrid from '../components/ImageGrid.astro';
 import { Picture } from 'astro:assets';
 import Card from '../components/Card.astro';
 import Aside from '../components/Aside.astro';
+import Title from '../components/Title.astro';
 import Button from '../components/Button.astro';
 ---
 
@@ -58,9 +59,12 @@ import Button from '../components/Button.astro';
 
 	<section class="c-section" x-data="{ modal: null }">
 		<div class="o-container o-duo">
-			<div class="o-stack">
-				<Card id=1 />
-				<Card id=2 />
+			<div>
+				<Title text="Job History" />
+				<div class="o-stack">
+					<Card id=1 />
+					<Card id=2 />
+				</div>
 			</div>
 			<div class="o-stack o-stack--sm">
 				<Button href="#">
