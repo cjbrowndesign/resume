@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 
+import buttonIcon from '../images/icons/download.svg';
 ---
 
 <header class="c-header">
@@ -19,6 +21,7 @@
                 <li class="c-header__item">
                     <a href="#" class="c-header__link">
                         Download CV
+                        <Image src={ buttonIcon } class="c-button__icon" alt="" width="18" />
                     </a>
                 </li>
             </ul>
@@ -53,7 +56,9 @@
     }
 
     .c-header__link {
-        display: block;
+        display: flex;
+        gap: 10px;
+        align-items: center;
 
         padding: 8px 12px;
 
