@@ -68,6 +68,7 @@ import SvelteIcon from '../images/icons/svelte.svg';
                 Production
             </span>
         </div>
+        <span class="c-aside__br"></span>
         <div class="c-aside__item">
             <div class="c-aside__header">
                 <span class="c-aside__icon">
@@ -107,6 +108,7 @@ import SvelteIcon from '../images/icons/svelte.svg';
                 Personal
             </span>
         </div>
+        <span class="c-aside__br"></span>
         <div class="c-aside__item">
             <div class="c-aside__header">
                 <span class="c-aside__icon">
@@ -185,5 +187,14 @@ import SvelteIcon from '../images/icons/svelte.svg';
         color: rgba(var(--text));
         font-weight: 400;
         font-size: 14px;
+    }
+
+    .c-aside__br {
+        display: block;
+
+        background-color: rgba(var(--border), 0.05);
+
+        width: 100%;
+        height: 1px;
     }
 </style>
