@@ -1,23 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Banner from '../components/Banner.astro';
-import Card from '../components/Card.astro';
+import Project from '../components/Project.astro';
+
+const allProjects = await Astro.glob('../content/projects/*.md');
 ---
 
 <Layout title="Projects - Cj Brown">
 	<Banner
 	title="Previous Projects"
-	copy="Below is a list of some of the projects I have worked on in the past. They are a mix of personal and professional projects that I am particularly proud of."
+	copy="Below is a list of some of the projects I have worked on in the past. They are a mix of personal and professional projects that I am particularly proud of. Please note, unless stated otherwise, I do not own the rights to, and am not associated with, the projects and companies listed below. My description of the project is for illustrative purposes to showcase my skills and role in the development of the project."
 	/>
 
     <section class="c-section">
         <div class="o-container">
             <div class="o-grid">
-                <div class="o-stack" x-data="{ modal: null }">
-                    <Card id=1 button="View Website" />
-					<Card id=2 button="View Website" />
-                    <Card id=3 button="View Website" />
-					<Card id=4 button="View Website" />
+                <div class="o-stack">
+                    {
+						allProjects.map((project) => (
+                            <Project
+                            title={project.frontmatter.title}
+                            url={project.frontmatter.url}
+                            tech={project.frontmatter.tech}
+                            employer={project.frontmatter.employer}
+                            >
+                                <Fragment set:html={project.compiledContent()} />
+                            </Project>
+						))
+					}
                 </div>
             </div>
         </div>

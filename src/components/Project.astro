@@ -1,0 +1,103 @@
+---
+const { title, url, tech, employer } = Astro.props;
+---
+
+<div class="c-project-card">
+    <h4 class="c-project-card__subtitle">
+		{ tech }
+	</h4>
+	<h3 class="c-project-card__title">
+		{ title } - <span>{ employer }</span>
+	</h3>
+	<div class="c-project-card__copy is-quarantine">
+		<slot /> 
+    </div>
+	<a href={ url } target="_blank" rel="noreferrer" class="c-project-card__link">
+		Visit Website
+    </a>
+</div>
+
+<style>
+    .c-project-card {
+		position: relative;
+		z-index: 5;
+
+        max-width: 800px;
+	}
+
+	.c-project-card:before {
+		display: block;
+
+		position: absolute;
+		top: -30px;
+		left: -30px;
+		z-index: -1;
+
+		opacity: 0%;
+		scale: 0.98;
+
+		transition: 0.125s ease-in-out all;
+
+		border-radius: 16px;
+		border: 1px solid rgba(var(--border), 0.1);
+		background-color: rgba(var(--dark), 0.5);
+
+		width: calc(100% + 60px);
+		height: calc(100% + 60px);
+
+		content: "";
+	}
+
+	.c-project-card:hover:before {
+		opacity: 100%;
+		scale: 1;
+	}
+
+	.c-project-card__subtitle {
+		display: inline-block;
+
+		margin: 0 0 16px;
+		padding-left: 10px;
+
+		border-left: 2px solid rgba(var(--border), 0.6);
+
+		color: rgba(var(--border), 0.5);
+		font-weight: 400;
+		line-height: 1;
+		font-size: 14px;
+	}
+
+	.c-project-card__title {
+		margin: 0 0 12px;
+
+		color: rgb(var(--light));
+		font-weight: 600;
+		font-size: 16px;
+	}
+
+    .c-project-card__title span {
+        color: rgba(var(--text));
+        font-weight: 400;
+    }
+	
+	.c-project-card__copy {
+		margin: 0 0 16px;
+
+		color: rgb(var(--text));
+		line-height: 24px;
+		font-size: 14px;
+	}
+
+	.c-project-card__link {
+		margin: 0;
+		padding: 0;
+
+		border: 0;
+		background: none;
+
+		text-decoration: none;
+		color: rgba(var(--accent));
+
+		cursor: pointer;
+	}
+</style>
