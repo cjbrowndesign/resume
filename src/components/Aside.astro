@@ -1,6 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 
+import codeIcon from '../images/icons/code.svg';
+
 import LaravelIcon from '../images/icons/laravel.svg';
 import VueIcon from '../images/icons/vue.svg';
 import JSIcon from '../images/icons/javascript.svg';
@@ -14,6 +16,7 @@ import AlpineIcon from '../images/icons/alpine.svg';
 
 <aside class="c-aside">
     <h4 class="c-aside__title">
+        <Image src={ codeIcon } alt="code" width="20" />
         Tech Stack
     </h4>
     <div class="o-stack o-stack--sm">
@@ -151,12 +154,16 @@ import AlpineIcon from '../images/icons/alpine.svg';
 
     .c-aside__item {
         display: flex;
-        gasp: 20px;
+        gap: 20px;
         align-items: center;
         justify-content: space-between;
     }
 
     .c-aside__title {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
         margin: 0 0 34px;
 
         color: rgba(var(--light));

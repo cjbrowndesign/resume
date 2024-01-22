@@ -27,4 +27,20 @@
 
         transform: translateX(-50%);
     }
+    @media screen and (max-width: 920px) {
+        .c-image-grid {
+            height: 240px;
+        }
+        .c-image-grid__wrapper {
+            grid-template-columns: repeat(5, 200px);
+        }
+    }
+    @media screen and (max-width: 640px) {
+        .c-image-grid {
+            height: 160px;
+        }
+        .c-image-grid__wrapper {
+            grid-template-columns: repeat(5, 120px);
+        }
+    }
 </style>

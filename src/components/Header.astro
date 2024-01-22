@@ -9,12 +9,12 @@ import buttonIcon from '../images/icons/download.svg';
         <nav class="c-header__navigation">
             <ul class="c-header__menu">
                 <li class="c-header__item">
-                    <a href="/" class="c-header__link">
+                    <a href="/resume/" class="c-header__link">
                         About
                     </a>
                 </li>
                 <li class="c-header__item">
-                    <a href="/projects" class="c-header__link">
+                    <a href="/resume/projects" class="c-header__link">
                         Projects
                     </a>
                 </li>
@@ -68,5 +68,10 @@ import buttonIcon from '../images/icons/download.svg';
 
     .c-header__link:hover {
         color: rgb(var(--accent));
+    }
+    @media screen and (max-width: 640px) {
+        .c-header {
+            width: 80%;
+        }
     }
 </style>
