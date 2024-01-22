@@ -24,6 +24,15 @@ const { title } = Astro.props;
 		<Header />
 		<slot />
 		<Footer />
+		<script>
+			import Alpine from 'alpinejs'
+			import focus from '@alpinejs/focus';
+ 
+			window.Alpine = Alpine;
+
+			Alpine.plugin(focus);
+			Alpine.start();
+		</script>
 	</body>
 </html>
 <style is:global>

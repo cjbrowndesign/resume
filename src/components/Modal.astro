@@ -9,8 +9,8 @@ const {
 } = Astro.props;
 ---
 
-<article class="c-modal" x-show=`modal == ${id}` x-transition.225ms>
-    <div class="c-modal__content">
+<dialog class="c-modal" x-show=`modal == ${id}` x-trap.noscroll=`modal == ${id}` x-transition.225ms>
+    <div class="c-modal__content"  @click.outside="modal = null">
         <h4 class="c-modal__subtitle">
             { startDate } - { endDate }
         </h4>
@@ -21,7 +21,7 @@ const {
             <slot />
         </div>
     </div>
-</article>
+</dialog>
 
 <style>
     .c-modal {
@@ -36,6 +36,7 @@ const {
 
         z-index: 10;
 
+        border: 0;
         background-color: rgba(0, 0, 0, 0.55);
 
         width: 100%;
