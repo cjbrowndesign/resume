@@ -6,6 +6,7 @@ import { Picture, Image } from 'astro:assets';
 import Card from '../components/Card.astro';
 import Aside from '../components/Aside.astro';
 import Title from '../components/Title.astro';
+import Article from '../components/Article.astro';
 import Button from '../components/Button.astro';
 import Modal from '../components/Modal.astro';
 
@@ -107,6 +108,22 @@ const allJobs = await Astro.glob('../content/jobs/*.md');
 						))
 					}
 				</div>
+				<Title text="About Me" />
+				<Article>
+					<p>I'm a hard-working, self-taught front-end web developer with 6 years of
+					experience. I build websites and web applications using HTML, CSS, JavaScript,
+					Laravel, React, Vue, Astro, Svelte, and more. I have a keen interest in performance
+					and accessibility, and I'm always looking to learn new things. I love to engage
+					with a variety of new languages and frameworks, tackling fresh challenges that
+					broadened my technical expertise and problem-solving abilities, aided by my
+					adaptability and eagerness to learn.</p>
+					<p>When not working, I try to make the most of my free time by adventuring with
+					my partner and 2 year old Labrador (Moose), visting new towns and cities - either
+					camping or glamping (mostly glamping). I enjoy visiting new countries and
+					experiencing new cultures. More often than not, though, I can be found in one of
+					two places - firmly seated in my living room enjoying a new box set or movie, or
+					at my desk playing the latest video games.</p>
+				</Article>
 			</div>
 			<div class="o-stack o-stack--sm">
 				<Button href="/resume/cv-2024.pdf" target={'_blank'}>

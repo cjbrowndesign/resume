@@ -1,0 +1,22 @@
+---
+---
+
+<div class="c-article">
+    <slot />
+</div>
+
+<style>
+    .c-article {
+		color: rgb(var(--text));
+		line-height: 24px;
+		font-size: 14px;
+    }
+
+    .c-article p:first-child {
+        margin-top: 0;
+    }
+
+    .c-article p:last-child {
+        margin-bottom: 0;
+    }
+</style>
