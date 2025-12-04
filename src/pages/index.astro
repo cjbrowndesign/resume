@@ -10,21 +10,18 @@ import Article from '../components/Article.astro';
 import Button from '../components/Button.astro';
 import Modal from '../components/Modal.astro';
 
-import imgOne from '../images/img_one.jpg';
 import imgTwo from '../images/img_two.jpg';
-import imgThree from '../images/img_three.jpg';
-import imgFour from '../images/img_four.jpg';
-import imgFive from '../images/img_five.jpg';
+import imgSix from '../images/img_six.webp';
+import imgSeven from '../images/img_seven.jpg';
 
 import buttonIcon from '../images/icons/download.svg';
-import { Code } from 'astro:components';
 
 const allJobs = await Astro.glob('../content/jobs/*.md');
 ---
 
-<Layout title="Cj Brown - Front End Developer">
+<Layout title="Cj Brown - Developer">
 	<Banner
-	title="Hi, I'm Cj Brown, a front end developer based in the UK."
+	title="Hi, I'm Cj Brown, a developer based in Lincolnshire, UK."
 	copy=" I build websites and web applications using HTML, CSS, JavaScript, Laravel, React, Vue, Astro, Svelte, and more. I have a keen interest in performance and accessibility, and I'm always looking to learn new things."
 	/>
 
@@ -32,16 +29,7 @@ const allJobs = await Astro.glob('../content/jobs/*.md');
 		<div class="o-container">
 			<ImageGrid>
 				<Picture
-				src={imgOne}
-				formats={['webp', 'jpg']}
-				alt="Astro"
-				width="300"
-				height="300"
-				class={`c-image-grid__item`}
-				pictureAttributes={{style: "rotate: -2deg;"}}
-				/>
-				<Picture
-				src={imgTwo}
+				src={imgSeven}
 				formats={['webp', 'jpg']}
 				alt="Astro"
 				width="300"
@@ -50,7 +38,7 @@ const allJobs = await Astro.glob('../content/jobs/*.md');
 				pictureAttributes={{style: "rotate: 1deg;"}}
 				/>
 				<Picture
-				src={imgThree}
+				src={imgSix}
 				formats={['webp', 'jpg']}
 				alt="Astro"
 				width="300"
@@ -59,22 +47,13 @@ const allJobs = await Astro.glob('../content/jobs/*.md');
 				pictureAttributes={{style: "rotate: 2deg;"}}
 				/>
 				<Picture
-				src={imgFour}
+				src={imgTwo}
 				formats={['webp', 'jpg']}
 				alt="Astro"
 				width="300"
 				height="300"
 				class={`c-image-grid__item`}
 				pictureAttributes={{style: "rotate: -2deg;"}}
-				/>
-				<Picture
-				src={imgFive}
-				formats={['webp', 'jpg']}
-				alt="Astro"
-				width="300"
-				height="300"
-				class={`c-image-grid__item`}
-				pictureAttributes={{style: "rotate: 2deg;"}}
 				/>
 			</ImageGrid>
 		</div>
@@ -103,7 +82,8 @@ const allJobs = await Astro.glob('../content/jobs/*.md');
 							endDate={job.frontmatter.endDate}
 							role={job.frontmatter.role}
 							location={job.frontmatter.location}
-							id={job.frontmatter.id}>
+							id={job.frontmatter.id}
+							tags={job.frontmatter.tags}>
 								<Fragment set:html={job.compiledContent()} />
 							</Modal>
 						))
@@ -111,11 +91,11 @@ const allJobs = await Astro.glob('../content/jobs/*.md');
 				</div>
 				<Title text="About Me" />
 				<Article>
-					<p>I'm a dedicated and self-taught front-end web developer with over 6 years of experience. I specialize in building content-focused websites and web applications using technologies such as HTML, CSS, JavaScript, Laravel, React, Vue, Astro, and Svelte. My expertise extends to numerous PHP-based Content Management Systems, including WordPress, Craft, and Statamic, as well as headless solutions like Storyblok and Sanity. Beyond content-driven brochure sites, I have extensive experience in developing custom web applications, including CRUD systems, bespoke CRM solutions, and project management tools.</p>
+					<p>I'm a dedicated and self-taught front-end web developer with over 7 years of experience. I specialize in building content-focused websites and web applications using full-stack technologies and frameworks such as Laravel, Vue, React, Astro, and Svelte. My expertise extends to numerous PHP-based Content Management Systems, including WordPress, Craft, and Statamic, as well as headless solutions like Storyblok and Sanity. Beyond content-driven brochure sites, I have extensive experience in developing custom web applications, including CRUD systems, bespoke CRM solutions, project management tools and internal products.</p>
 					
 					<p>I have a strong focus on performance and accessibility and am always eager to expand my knowledge. I thrive on engaging with new languages and frameworks, tackling challenges that enhance my technical expertise and problem-solving skills, fueled by my adaptability and passion for learning.</p>
 
-					<p>In my free time, I love adventuring with my fiancée and our 3-year-old Labrador, Moose, exploring new towns and cities, camping (or glamping, rather), visiting the coast or enjoying strolls through our local woodlands. I enjoy traveling to new countries and immersing myself in different cultures. When at home, you’ll often find me either enjoying a new box set or movie in my living room or at my desk playing the latest video games.</p>
+					<p>I'm a new dad to my 5 month old son, an avid gamer, television/movie enthusiast, and pet lover.</p>
 				</Article>
 			</div>
 			<div class="o-stack o-stack--sm">

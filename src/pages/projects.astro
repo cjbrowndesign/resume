@@ -1,35 +1,300 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Banner from '../components/Banner.astro';
-import Project from '../components/Project.astro';
+import Layout from "../layouts/Layout.astro";
+import Banner from "../components/Banner.astro";
+import { Image } from "astro:assets";
 
-const allProjects = await Astro.glob('../content/projects/*.md');
+import codeIcon from "../images/icons/code.svg";
+
+import LaravelIcon from "../images/icons/laravel.svg";
+import LivewireIcon from "../images/icons/livewire.svg";
+import VueIcon from "../images/icons/vue.svg";
+import ReactIcon from "../images/icons/react.svg";
+import AstroIcon from "../images/icons/astro.svg";
+import SvelteIcon from "../images/icons/svelte.svg";
+import AlpineIcon from "../images/icons/alpine.svg";
+import NpmIcon from "../images/icons/npm.svg";
+import ComposerIcon from "../images/icons/composer.svg";
+import WebpackIcon from "../images/icons/webpack.svg";
+import ViteIcon from "../images/icons/vite.svg";
+import DockerIcon from "../images/icons/docker.svg";
+import ForgeIcon from "../images/icons/forge.svg";
+import AwsIcon from "../images/icons/aws.svg";
+import CpanelIcon from "../images/icons/cpanel.svg";
+import LinodeIcon from "../images/icons/linode.svg";
+import StatamicIcon from "../images/icons/statamic.svg";
+import WordpressIcon from "../images/icons/wordpress-icon.svg";
+import CraftIcon from "../images/icons/craftcms.svg";
 ---
 
 <Layout title="Projects - Cj Brown">
-	<Banner
-	title="Previous Projects"
-	copy="Below is a list of some of the projects I have worked on in the past. They are a mix of personal and professional projects that I am particularly proud of. Please note, unless stated otherwise, I do not own the rights to, and am not associated with, the projects and companies listed below. My description of the project is for illustrative purposes to showcase my skills and role in the development of the project."
-	/>
+  <Banner
+    title="Skills / Tech Stack"
+    copy="Below is a list of the languages, frameworks, tools and services I've used in my career as a developer. I'm lucky to have been exposed to a wide variety of tools and it would be a loooong list to include them all!"
+  />
 
-    <section class="c-section">
-        <div class="o-container">
-            <div class="o-grid">
-                <div class="o-stack">
-                    {
-						allProjects.map((project) => (
-                            <Project
-                            title={project.frontmatter.title}
-                            url={project.frontmatter.url}
-                            tech={project.frontmatter.tech}
-                            employer={project.frontmatter.employer}
-                            >
-                                <Fragment set:html={project.compiledContent()} />
-                            </Project>
-						))
-					}
+  <section class="c-section">
+    <div class="o-container">
+      <div class="o-stack o-stack--sm">
+        <div class="o-stack__item">
+          <aside class="c-aside c-aside--inline">
+            <h4 class="c-aside__title">
+              <Image src={codeIcon} alt="code" width="20" />
+              Content Management Systems
+            </h4>
+            <div class="o-stack o-stack--sm">
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image
+                      src={StatamicIcon}
+                      alt="Laravel"
+                      class="c-aside__src"
+                    />
+                  </span>
+                  <h5 class="c-aside__name">Statamic</h5>
                 </div>
+                <span class="c-aside__experience"> Production </span>
+              </div>
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image
+                      src={WordpressIcon}
+                      alt="Laravel"
+                      class="c-aside__src"
+                    />
+                  </span>
+                  <h5 class="c-aside__name">WordPress</h5>
+                </div>
+                <span class="c-aside__experience"> Production </span>
+              </div>
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image src={CraftIcon} alt="Laravel" class="c-aside__src" />
+                  </span>
+                  <h5 class="c-aside__name">Craft CMS</h5>
+                </div>
+                <span class="c-aside__experience"> Production </span>
+              </div>
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image
+                      src={LaravelIcon}
+                      alt="Laravel"
+                      class="c-aside__src"
+                    />
+                  </span>
+                  <h5 class="c-aside__name">Perch CMS</h5>
+                </div>
+                <span class="c-aside__experience"> Production </span>
+              </div>
             </div>
+          </aside>
         </div>
-    </section>
+        <div class="o-stack__item">
+          <aside class="c-aside c-aside--inline">
+            <h4 class="c-aside__title">
+              <Image src={codeIcon} alt="code" width="20" />
+              Frameworks
+            </h4>
+            <div class="o-stack o-stack--sm">
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image
+                      src={LaravelIcon}
+                      alt="LAravel"
+                      class="c-aside__src"
+                    />
+                  </span>
+                  <h5 class="c-aside__name">Laravel</h5>
+                </div>
+                <span class="c-aside__experience"> Production </span>
+              </div>
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image src={VueIcon} alt="Vue" class="c-aside__src" />
+                  </span>
+                  <h5 class="c-aside__name">Vue (v2)</h5>
+                </div>
+                <span class="c-aside__experience"> Production </span>
+              </div>
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image
+                      src={LivewireIcon}
+                      alt="Laravel Livewire"
+                      class="c-aside__src"
+                    />
+                  </span>
+                  <h5 class="c-aside__name">Livewire</h5>
+                </div>
+                <span class="c-aside__experience"> Production </span>
+              </div>
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image
+                      src={AlpineIcon}
+                      alt="AlpineJS"
+                      class="c-aside__src"
+                    />
+                  </span>
+                  <h5 class="c-aside__name">AplineJS</h5>
+                </div>
+                <span class="c-aside__experience"> Production </span>
+              </div>
+              <span class="c-aside__br"></span>
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image src={ReactIcon} alt="React" class="c-aside__src" />
+                  </span>
+                  <h5 class="c-aside__name">React</h5>
+                </div>
+                <span class="c-aside__experience"> Personal </span>
+              </div>
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image src={AstroIcon} alt="Astro" class="c-aside__src" />
+                  </span>
+                  <h5 class="c-aside__name">Astro</h5>
+                </div>
+                <span class="c-aside__experience"> Personal </span>
+              </div>
+              <span class="c-aside__br"></span>
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image src={SvelteIcon} alt="Svelte" class="c-aside__src" />
+                  </span>
+                  <h5 class="c-aside__name">Svelte</h5>
+                </div>
+                <span class="c-aside__experience"> Hobbyist </span>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="o-stack__item">
+          <aside class="c-aside c-aside--inline">
+            <h4 class="c-aside__title">
+              <Image src={codeIcon} alt="code" width="20" />
+              Project Tools
+            </h4>
+            <div class="o-stack o-stack--sm">
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image src={DockerIcon} alt="Docker" class="c-aside__src" />
+                  </span>
+                  <h5 class="c-aside__name">Docker</h5>
+                </div>
+                <span class="c-aside__experience"> Production </span>
+              </div>
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image src={NpmIcon} alt="PHP" class="c-aside__src" />
+                  </span>
+                  <h5 class="c-aside__name">NPM</h5>
+                </div>
+                <span class="c-aside__experience"> Production </span>
+              </div>
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image src={ComposerIcon} alt="PHP" class="c-aside__src" />
+                  </span>
+                  <h5 class="c-aside__name">Composer</h5>
+                </div>
+                <span class="c-aside__experience"> Production </span>
+              </div>
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image src={WebpackIcon} alt="PHP" class="c-aside__src" />
+                  </span>
+                  <h5 class="c-aside__name">Webpack</h5>
+                </div>
+                <span class="c-aside__experience"> Production </span>
+              </div>
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image src={LaravelIcon} alt="PHP" class="c-aside__src" />
+                  </span>
+                  <h5 class="c-aside__name">Laravel Mix</h5>
+                </div>
+                <span class="c-aside__experience"> Production </span>
+              </div>
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image src={ViteIcon} alt="PHP" class="c-aside__src" />
+                  </span>
+                  <h5 class="c-aside__name">Vite</h5>
+                </div>
+                <span class="c-aside__experience"> Production </span>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="o-stack__item">
+          <aside class="c-aside c-aside--inline">
+            <h4 class="c-aside__title">
+              <Image src={codeIcon} alt="code" width="20" />
+              Dev Ops
+            </h4>
+            <div class="o-stack o-stack--sm">
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image
+                      src={ForgeIcon}
+                      alt="Laravel Forge"
+                      class="c-aside__src"
+                    />
+                  </span>
+                  <h5 class="c-aside__name">Laravel Forge</h5>
+                </div>
+                <span class="c-aside__experience"> Production </span>
+              </div>
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image src={AwsIcon} alt="AWS" class="c-aside__src" />
+                  </span>
+                  <h5 class="c-aside__name">AWS</h5>
+                </div>
+                <span class="c-aside__experience"> Production </span>
+              </div>
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image src={LinodeIcon} alt="Linode" class="c-aside__src" />
+                  </span>
+                  <h5 class="c-aside__name">Linode</h5>
+                </div>
+                <span class="c-aside__experience"> Production </span>
+              </div>
+              <div class="c-aside__item">
+                <div class="c-aside__header">
+                  <span class="c-aside__icon">
+                    <Image src={CpanelIcon} alt="cPanel" class="c-aside__src" />
+                  </span>
+                  <h5 class="c-aside__name">cPanel</h5>
+                </div>
+                <span class="c-aside__experience"> Production </span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

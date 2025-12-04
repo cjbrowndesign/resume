@@ -1,85 +1,89 @@
 ---
-import { Image } from 'astro:assets';
-import telIcon from '../images/icons/tel.svg';
-import mailIcon from '../images/icons/email.svg';
+import { Image } from "astro:assets";
+import telIcon from "../images/icons/tel.svg";
+import mailIcon from "../images/icons/email.svg";
 
 const { title } = Astro.props;
 const { copy } = Astro.props;
 ---
 
 <div class="c-banner">
-    <div class="c-banner__container">
-        <h1 class="c-banner__title">
-            { title }
-        </h1>
-        <p class="c-banner__copy">
-            { copy }
-        </p>
-        <div class="c-banner__actions">
-            <a href="mailto:hello@cjbrowndesign.co.uk" class="c-banner__link c-banner__link--email">
-                <Image src={ telIcon } class="c-button__icon" alt="" width="18" />
-                hello@cjbrowndesign.co.uk
-            </a>
-            <a href="tel:+447533065456" class="c-banner__link c-banner__link--phone">
-                <Image src={ mailIcon } class="c-button__icon" alt="" width="18" />
-                +447533065456
-            </a>
-        </div>
+  <div class="c-banner__container">
+    <h1 class="c-banner__title">
+      {title}
+    </h1>
+    <p class="c-banner__copy">
+      {copy}
+    </p>
+    <div class="c-banner__actions">
+      <a
+        href="mailto:hello@cjbrowndesign.co.uk"
+        class="c-banner__link c-banner__link--email"
+      >
+        <Image src={telIcon} class="c-button__icon" alt="" width="18" />
+        hello@cjbrowndesign.co.uk
+      </a>
+      <a href="tel:+447533065456" class="c-banner__link c-banner__link--phone">
+        <Image src={mailIcon} class="c-button__icon" alt="" width="18" />
+        +447533065456
+      </a>
     </div>
+  </div>
 </div>
 
 <style>
-    .c-banner {
-        position: relative;
+  .c-banner {
+    position: relative;
 
-        padding: 40px 0 0;
-    }
+    padding: 40px 0 0;
+  }
 
-    .c-banner__container {
-        padding: 0 5%;
+  .c-banner__container {
+    padding: 0 5%;
 
-        max-width: 690px;
-    }
+    max-width: 860px;
+  }
 
+  .c-banner__title {
+    margin: 0 0 24px;
+
+    color: rgb(var(--light));
+    line-height: 56px;
+    font-size: 48px;
+  }
+
+  .c-banner__copy {
+    margin: 0;
+    max-width: 640px;
+
+    color: rgba(var(--text));
+    line-height: 24px;
+    font-size: 16px;
+  }
+  .c-banner__actions {
+    margin-top: 24px;
+  }
+
+  .c-banner__link {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    margin-top: 10px;
+
+    color: rgba(var(--text));
+    line-height: 24px;
+    font-size: 16px;
+  }
+
+  .c-banner__link:hover {
+    color: rgb(var(--accent));
+  }
+
+  @media screen and (max-width: 640px) {
     .c-banner__title {
-        margin: 0 0 24px;
-
-        color: rgb(var(--light));
-        line-height: 56px;
-        font-size: 48px;
+      line-height: 40px;
+      font-size: 32px;
     }
-
-    .c-banner__copy {
-        margin: 0;
-
-        color: rgba(var(--text));
-        line-height: 24px;
-        font-size: 16px;
-    }
-    .c-banner__actions {
-        margin-top: 24px;
-    }
-
-    .c-banner__link {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-
-        margin-top: 10px;
-
-        color: rgba(var(--text));
-        line-height: 24px;
-        font-size: 16px;
-    }
-
-    .c-banner__link:hover {
-        color: rgb(var(--accent));
-    }
-
-    @media screen and (max-width: 640px) {
-        .c-banner__title {
-            line-height: 40px;
-            font-size: 32px;
-        }
-    }
+  }
 </style>

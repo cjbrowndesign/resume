@@ -1,49 +1,34 @@
 ---
+
 ---
 
 <div class="c-image-grid">
-    <div class="c-image-grid__wrapper">
-        <slot />
-    </div>
+  <slot />
 </div>
 
 <style>
+  .c-image-grid {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    height: 340px;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 920px) {
     .c-image-grid {
-        position: relative;
-
-        height: 340px;
-        width: 100%;
+      height: 240px;
+      overflow: hidden;
+      width: 120%;
+      left: -10%;
     }
-
-    .c-image-grid__wrapper {
-        display: grid;
-
-        position: absolute;
-        top: 0;
-        left: 50%;
-
-        grid-template-columns: repeat(5, 300px);
-        gap: 30px;
-
-        transform: translateX(-50%);
+  }
+  @media screen and (max-width: 640px) {
+    .c-image-grid {
+      height: 160px;
     }
-    @media screen and (max-width: 920px) {
-        .c-image-grid {
-            height: 240px;
-            overflow: hidden;
-            width: 120%;
-            left: -10%;
-        }
-        .c-image-grid__wrapper {
-            grid-template-columns: repeat(5, 200px);
-        }
-    }
-    @media screen and (max-width: 640px) {
-        .c-image-grid {
-            height: 160px;
-        }
-        .c-image-grid__wrapper {
-            grid-template-columns: repeat(5, 120px);
-        }
-    }
+  }
 </style>
